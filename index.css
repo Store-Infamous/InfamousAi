@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================== BASE ===================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0a0a0f;
+  color: #e8e8f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================== AUTH CARD ===================== */
+.auth-card {
+  background: rgba(18, 18, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 20px 60px -10px rgba(0, 0, 0, 0.5),
+    0 0 120px -20px rgba(124, 92, 252, 0.08);
+  backdrop-filter: blur(24px);
+}
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.08); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* ===================== PROSE OVERRIDES ===================== */
+.prose pre {
+  position: relative;
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+.prose pre code {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace !important;
+  font-size: 12px !important;
+  background: transparent !important;
+  padding: 0 !important;
+  color: #c8c8d8 !important;
+}
+.prose code {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace !important;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(124, 92, 252, 0.1);
+  color: #b0a0ff;
+}
+.prose p { margin-bottom: 8px; }
+.prose strong { color: #e0e0f0; }
+.prose ul { margin-left: 16px; margin-bottom: 8px; }
+.prose li { margin-bottom: 4px; }
+.prose h1, .prose h2, .prose h3 { color: #e0e0f0; margin-top: 16px; margin-bottom: 8px; }
+.prose a { color: #9b7bff; text-decoration: underline; }
+.prose a:hover { color: #b09bff; }
+.prose blockquote {
+  border-left: 3px solid rgba(124, 92, 252, 0.4);
+  padding-left: 16px;
+  color: #a0a0b8;
+  font-style: italic;
+}
+
+/* ===================== SELECTION ===================== */
+::selection {
+  background: rgba(124, 92, 252, 0.3);
+  color: white;
+}
+
+/* ===================== FOCUS ===================== */
+*:focus-visible {
+  outline: 2px solid rgba(124, 92, 252, 0.5);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ===================== HIGHLIGHT.JS THEME OVERRIDES ===================== */
+.hljs {
+  background: transparent !important;
+}
+.hljs-keyword { color: #c678dd !important; }
+.hljs-string { color: #98c379 !important; }
+.hljs-number { color: #d19a66 !important; }
+.hljs-comment { color: #5c6370 !important; font-style: italic; }
+.hljs-function { color: #61afef !important; }
+.hljs-title { color: #61afef !important; }
+.hljs-params { color: #abb2bf !important; }
+.hljs-built_in { color: #e5c07b !important; }
+.hljs-literal { color: #d19a66 !important; }
+.hljs-type { color: #e5c07b !important; }
+.hljs-attr { color: #d19a66 !important; }
+.hljs-tag { color: #e06c75 !important; }
+.hljs-name { color: #e06c75 !important; }
+.hljs-attribute { color: #d19a66 !important; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .prose pre { font-size: 11px !important; padding: 12px !important; }
+}
